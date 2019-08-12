@@ -334,3 +334,5 @@ fabric.properties
 .history
 
 # End of https://www.gitignore.io/api/emacs,python,django,pycharm,visualstudiocode
+
+\.vscode/settings\.json
