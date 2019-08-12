@@ -5,8 +5,13 @@ from django.template import loader
 
 
 # Create your views here.
-def detail(request, question_id):((
-    return HttpResponce("you are looking at the questions {}", .format("question_id"))
+def detail(request, question_id):
+    try:
+        question = Question.objects.get(pk=question_id)
+        return HttpResponce("you are looking at the questions {}", .format("question_id"))
+    except Question.DoesNotExist:
+        raise Http404("Question does not exist")
+        return render(request, 'polls/detail.html', {'question': question}) 
 def results(request, question_id):
     return HttpResponce("you are looking at the result of the question {}",.format("question_id"))
 def vote(request, question_id):
