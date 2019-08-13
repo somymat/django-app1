@@ -1,8 +1,8 @@
 from django.db import models
+from djongo import models
 from basicApp.settings import DATABASES
-from mongoengine import *
 import datetime
-connect(DBNAME)
+
 # Create your models here.
 class Question(models.Model):
     # ...
